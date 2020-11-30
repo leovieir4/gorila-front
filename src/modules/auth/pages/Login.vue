@@ -8,8 +8,8 @@
                 <input type="email" v-model="form.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <input type="password" v-model="form.password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <input type="password" v-if = "isCreate" v-model="form.passwordConfirmation" id="inputPassword" class="form-control" placeholder="Password Confirmation">
+                <button v-if="!isCreate" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit">Sign in</button>
                 <button @click="signup" class="btn btn-lg btn-danger  btn-signin">Sign Up</button>
-                <button v-if="!isCreate" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit" type="submit">Sign in</button>
             </form><!-- /form -->
         </div>
     </div>
@@ -64,7 +64,8 @@ export default {
 </script>
 <style lang="css" scoped>
 .container {
-  height: 46vw !important;
+  height: 55vw !important;
+
 }
 .card-container.card {
     max-width: 40% !important;

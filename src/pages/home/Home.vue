@@ -32,7 +32,7 @@
               <div class="col-3">
                   <div class="form-group">
                   <label for="exampleInputEmail1">valor *</label>
-                  <input class="form-control" @keyup="validValue" v-model="form.value" aria-describedby="emailHelp" placeholder="Entre com o value">
+                  <input class="form-control" maxlength="10" @keyup="validValue" v-model="form.value" aria-describedby="emailHelp" placeholder="Entre com o value">
               </div>
               </div>
               <div class="col-3">
@@ -198,5 +198,4 @@ export default {
 }
 </script>
 <style lang="css">
-
 </style>
