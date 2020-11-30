@@ -5,7 +5,7 @@ Vue.use(VueResource)
 
 const http = Vue.http
 
-http.options.root = 'http://localhost:5050/api/'
+http.options.root = 'https://api-gorila-one.herokuapp.com/api/'
 
 Object.keys(services).map(service => {
   services[service] = Vue.resource('', {}, services[service])
