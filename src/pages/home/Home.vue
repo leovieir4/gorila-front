@@ -95,6 +95,9 @@ export default {
     selected: 'Renda fixa'
   }),
   mounted: function () {
+    if (!localStorage.getItem('token')) {
+      this.$router.push('/')
+    }
     this.ActionGetTickets().then((result) => {
       this.form.tickets = result.split(',')
       console.log(this.form.tickets)
