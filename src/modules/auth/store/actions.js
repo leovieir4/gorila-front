@@ -14,24 +14,18 @@ export const ActionDoLogin = ({ dispatch }, payload) => {
 export const ActionCreateUser = ({ dispatch }, payload) => {
   return services.auth.signup(payload)
 }
-export const ActionInserTinvestment = ({ dispatch }, payload) => {
-  return services.auth.investmentsInsert(payload)
+export const ActionInserTinvestment = async ({ dispatch }, payload) => {
+  const response = await services.auth.investmentsInsert(payload)
+  return response
 }
 export const ActionInvestmentsDelete = ({ dispatch }, payload) => {
   storage.setHeaderId(payload)
-  return services.auth.investmentsDelete(payload).then((result) => {
-    console.log(result)
-  }).catch((err) => {
-    console.log(err)
-  })
+  return services.auth.investmentsDelete(payload)
 }
 export const ActionLoadToken = ({ dispatch }) => {
-  console.log(storage.getLocalToken())
-  if (storage.getLocalToken()) {
-    dispatch('ActionSetToken', storage.getLocalToken())
-    dispatch('ActionSetUser', storage.getLocalUserId())
-    return true
-  }
+  dispatch('ActionSetToken', storage.getLocalToken())
+  dispatch('ActionSetUser', storage.getLocalUserId())
+  return true
 }
 export const ActionLoadTickets = ({ dispatch }) => {
   return new Promise((resolve, reject) => {

@@ -71,7 +71,7 @@
                  <td>R$:${{ticket.value}}</td>
                  <td>{{(new Date(1606666922574).getDate()+1) + '/' + new Date(1606666922574).getMonth() + '/' + new Date(1606666922574).getFullYear()}}</td>
                  <td>{{ticket.ticket || '#'}}</td>
-                 <td class="td-remove"><button type="button" class="btn btn-danger" @click="remove(ticket.id)">remover</button></td>
+                 <td class="td-remove"><button type="button" class="btn btn-danger" @click="remove(ticket.id)">REMOVER</button></td>
                </tr>
              </tbody>
            </table>
@@ -95,12 +95,12 @@ export default {
     selected: 'Renda fixa'
   }),
   mounted: function () {
+    this.ActionLoadToken()
     if (!localStorage.getItem('token')) {
       this.$router.push('/')
     }
     this.ActionGetTickets().then((result) => {
       this.form.tickets = result.split(',')
-      console.log(this.form.tickets)
     })
     if (localStorage.getItem('investments')) {
       this.investments = JSON.parse(localStorage.getItem('investments'))
@@ -115,7 +115,7 @@ export default {
     }, 600)
   },
   methods: {
-    ...mapActions('auth', ['ActionGetTickets', 'ActionLoadInvestments', 'ActionGetLocalUserId', 'ActionInserTinvestment', 'ActionInvestmentsDelete']),
+    ...mapActions('auth', ['ActionGetTickets', 'ActionLoadInvestments', 'ActionGetLocalUserId', 'ActionInserTinvestment', 'ActionInvestmentsDelete', 'ActionLoadToken']),
     async submit () {
       try {
 
@@ -136,7 +136,6 @@ export default {
           data: new Date(this.form.data).getTime(),
           value: this.form.value
         }
-        console.log(request)
       } else {
         request = {
           type: 'variavel',
@@ -146,10 +145,12 @@ export default {
           ticket: this.form.ticket
         }
       }
-      await this.ActionInserTinvestment(request)
+      const addInvest = await this.ActionInserTinvestment(request)
+      request.id = addInvest.data.id
       this.investments.push(request)
       localStorage.setItem('investments', JSON.stringify(this.investments))
       this.getChartData()
+      this.$toasted.show('O investimento foi adicionado', { duration: 6000 })
     },
     async remove (id) {
       await this.ActionInvestmentsDelete(id)
@@ -159,9 +160,9 @@ export default {
       this.investments = novo.filter(isId => isId)
       localStorage.setItem('investments', JSON.stringify(this.investments))
       this.getChartData()
+      this.$toasted.show('O investimento foi removido!', { duration: 6000 })
     },
     validValue () {
-      console.log(this.form.value)
       if (isNaN(parseInt(this.form.value))) {
         this.form.value = ''
         this.$toasted.show('Poxa irmão(a)! isso ai tem que ser um número!', { duration: 6000 })
@@ -180,7 +181,6 @@ export default {
       this.dataToChart = [variada, fixa]
     },
     validForm () {
-      console.log(this.selected, 'SDDDDDDDDD')
       if (this.selected === 'Renda fixa') {
         return (this.form.value && this.form.data)
       } else {
