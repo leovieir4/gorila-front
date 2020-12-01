@@ -64,7 +64,7 @@ export default {
 </script>
 <style lang="css" scoped>
 .container {
-  height: 70vw !important;
+  height: 100vw !important;
 
 }
 .card-container.card {

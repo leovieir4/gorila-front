@@ -112,7 +112,7 @@ export default {
     }
     setTimeout(() => {
       this.getChartData()
-    }, 600)
+    }, 800)
   },
   methods: {
     ...mapActions('auth', ['ActionGetTickets', 'ActionLoadInvestments', 'ActionGetLocalUserId', 'ActionInserTinvestment', 'ActionInvestmentsDelete', 'ActionLoadToken']),
@@ -198,4 +198,7 @@ export default {
 }
 </script>
 <style lang="css">
+.container {
+  height: 100vw !important;
+}
 </style>
