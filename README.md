@@ -1,7 +1,5 @@
 # gorila-front
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 gorila-front é uma aplicação desenvolvida com base nas tecnologias Javascript, Vuejs, Bootastrap e e seguindo os bons padroes de clean code, identação e modularização. Ela tem por finalidade realizar e concluir o [desafio](https://www.notion.so/Teste-Gorila-Full-Stack-J-nior-e-Pleno-d5e1b497ff64430ab6bb50aa988e2429) da Gorila invest de criar uma carteira de investimentos simplificada.
 
 # Features!
