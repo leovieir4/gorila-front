@@ -71,7 +71,7 @@
                <tr v-for="ticket in  investments" v-bind:key="ticket.id">
                  <td>Renda {{ticket.type}}</td>
                  <td>R$:{{ticket.value}}</td>
-                 <td>{{(new Date(1606666922574).getDate()+1) + '/' + new Date(1606666922574).getMonth() + '/' + new Date(1606666922574).getFullYear()}}</td>
+                 <td>{{(new Date().getDate()) + '/' + new Date().getMonth() + '/' + new Date().getFullYear()}}</td>
                  <td>{{ticket.ticket || '#'}}</td>
                  <td class="td-remove"><button type="button" class="btn btn-danger" @click="remove(ticket.id)">REMOVER</button></td>
                </tr>
