@@ -1,15 +1,16 @@
 <template>
     <div class="container">
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="https://s3.amazonaws.com/sample-login/companies/avatars/000/001/708/original/Icon_Gorila_hiRes.png?1529523010" />
+            <img id="profile-img" class="profile-img-card img-fluid" src="https://s3.amazonaws.com/sample-login/companies/avatars/000/001/708/original/Icon_Gorila_hiRes.png?1529523010" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
+              <div class="form-group">
                 <input type="email" v-model="form.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" v-model="form.password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <input type="password" v-if = "isCreate" v-model="form.passwordConfirmation" id="inputPassword" class="form-control" placeholder="Password Confirmation">
-                <button v-if="!isCreate" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit">Sign in</button>
-                <button @click="signup" class="btn btn-lg btn-danger  btn-signin">Sign Up</button>
+              </div>
+              <input type="password" v-model="form.password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <input type="password" v-if = "isCreate" v-model="form.passwordConfirmation" id="inputPassword" class="form-control" placeholder="Password Confirmation">
+              <button v-if="!isCreate" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit">Sign in</button>
+              <button @click="signup" class="btn btn-lg btn-danger  btn-signin">Sign Up</button>
             </form><!-- /form -->
         </div>
     </div>
@@ -64,12 +65,11 @@ export default {
 </script>
 <style lang="css" scoped>
 .container {
-  height: 100vw !important;
-
+  height: 165vw !important;
+  width: 100%;
 }
 .card-container.card {
-    max-width: 40% !important;
-
+    width: 30rem;
     padding: 40px 40px;
 }
 .html {

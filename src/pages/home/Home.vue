@@ -8,34 +8,36 @@
             </div>
             <div class="row">
               <div class="col col-chart">
-                <pie-chart :data ="dataToChart"></pie-chart>
+                <div class="chart">
+                  <pie-chart class="chart" :data ="dataToChart"></pie-chart>
+                </div>
               </div>
             </div>
             <p id="profile-name" class="profile-name-card"></p>
-            <div class="row" style="margin-top: 25px;">
-              <div class="col-3">
-                  <label for="cars">Tipo de investimento: *</label><br>
+            <div class="row justify-content-md-center" style="margin-top: 25px;">
+              <div class="col col-lg-3">
+                  <label for="cars">investimento:*</label><br>
                   <select class="form-control fixa-select" v-model="selected"  >
                      <option v-for="option in form.types" v-bind:value="option.name" v-bind:key="option.id">
                         {{ option.name }}
                      </option>
                   </select>
               </div>
-              <div class="col-3"  v-show="selected !== 'Renda fixa'">
-                  <label for="cars">Ativo (Ação) {{form.ticket}}: *</label><br>
+              <div class="col col-lg-3"  v-show="selected !== 'Renda fixa'">
+                  <label for="cars">Ativo:*</label><br>
                   <select class="form-control fixa-select" v-model="form.ticket"  >
                      <option v-for="option in form.tickets" v-bind:value="option" v-bind:key="option.name">
                         {{ option }}
                      </option>
                   </select>
               </div>
-              <div class="col-3">
+              <div class="col col-lg-3">
                   <div class="form-group">
-                  <label for="exampleInputEmail1">valor *</label>
+                  <label for="exampleInputEmail1">valor:*</label>
                   <input class="form-control" maxlength="10" @keyup="validValue" v-model="form.value" aria-describedby="emailHelp" placeholder="Entre com o value">
               </div>
               </div>
-              <div class="col-3">
+              <div class="col col-lg-3">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Data{{form.data}} *</label>
                  <input v-model="form.data" class="form-control" type="date">
@@ -96,9 +98,6 @@ export default {
   }),
   mounted: function () {
     this.ActionLoadToken()
-    if (!localStorage.getItem('token')) {
-      this.$router.push('/')
-    }
     this.ActionGetTickets().then((result) => {
       this.form.tickets = result.split(',')
     })
@@ -199,6 +198,6 @@ export default {
 </script>
 <style lang="css">
 .container {
-  height: 100vw !important;
+  height: 310vw !important;
 }
 </style>
