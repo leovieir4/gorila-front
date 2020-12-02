@@ -1,10 +1,6 @@
 # gorila-front
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-gorila-front é uma aplicação desenvolvida com base nas tecnologias Javascript, Vuejs, Bootastrap e e seguindo os bons padroes de clean code, identação e modularização. Ela tem por finalidade realizar e concluir o [desafio](https://www.notion.so/Teste-Gorila-Full-Stack-J-nior-e-Pleno-d5e1b497ff64430ab6bb50aa988e2429) da Gorila invest de criar uma carteira de investimentos simplificada.
+gorila-front é uma aplicação desenvolvida com base nas tecnologias Javascript, Vuejs, Bootastrap e e seguindo os bons padroes de clean code, identação e modularização. Responsiva (se adapta a tela do dispositivo) Ela tem por finalidade realizar e concluir o [desafio](https://www.notion.so/Teste-Gorila-Full-Stack-J-nior-e-Pleno-d5e1b497ff64430ab6bb50aa988e2429) da Gorila invest de criar uma carteira de investimentos simplificada.
 
 # Features!
   - SignUp API: Cadastro de usuarios consumindo a gorila-api
@@ -33,7 +29,7 @@ Codigo publicado no GitHub
 gorila-front precisa de [Node.js](https://nodejs.org/) v10+ para rodar.
 npm para o gerenciamento e download das dependencias
 
-Com essas depencias instaladas, basta clonar o repositorio do git, navegar até a pas raiz da aplicação e rodas os seguintes comandos:
+Com essas depencias instaladas, basta clonar o repositorio do git, navegar até a pasta raiz da aplicação e rodar os seguintes comandos:
 
 ```sh
 $ npm install
@@ -42,6 +38,6 @@ $ npm run build //gerar a pasta dist para rodar em produção
 $ npm run start //rodar a api em modo de produção
 ```
 
-A gorila-front hospedada no heroku versão free dyno, por isso quando não utilizada o heroku a desliga até a proxima requisição, por isso pode demorar um pouco para a primeira resposta.
+A gorila-front está hospedada no heroku versão free dyno, por isso quando não utilizada o heroku a desliga até a proxima requisição, por isso pode demorar um pouco para a primeira resposta.
 
 Link da api: https://gorila-front.herokuapp.com/
