@@ -39,7 +39,7 @@
               </div>
               <div class="col col-lg-3">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Data{{form.data}} *</label>
+                  <label for="exampleInputEmail1">Data*</label>
                  <input v-model="form.data" class="form-control" type="date">
                 </div>
               </div>
