@@ -16,7 +16,7 @@
             <p id="profile-name" class="profile-name-card"></p>
             <div class="row justify-content-md-center" style="margin-top: 25px;">
               <div class="col col-lg-3">
-                  <label for="cars">investimento:*</label><br>
+                  <label for="cars">Investimento:*</label><br>
                   <select class="form-control fixa-select" v-model="selected"  >
                      <option v-for="option in form.types" v-bind:value="option.name" v-bind:key="option.id">
                         {{ option.name }}
@@ -33,7 +33,7 @@
               </div>
               <div class="col col-lg-3">
                   <div class="form-group">
-                  <label for="exampleInputEmail1">valor:*</label>
+                  <label for="exampleInputEmail1">Valor:*</label>
                   <input class="form-control" maxlength="10" @keyup="validValue" v-model="form.value" aria-describedby="emailHelp" placeholder="Entre com o value">
               </div>
               </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="row">
               <div class="col col-title">
-                Lista de investimentos
+                Lista de Investimentos
               </div>
             </div>
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -90,11 +90,11 @@ export default {
       value: null,
       tickets: [],
       ticket: '',
-      types: [{ name: 'Renda fixa' }, { name: 'Renda variavel' }]
+      types: [{ name: 'Renda Fixa' }, { name: 'Renda Variável' }]
     },
     dataToChart: [],
     investments: [],
-    selected: 'Renda fixa'
+    selected: 'Renda Fixa'
   }),
   mounted: function () {
     this.ActionLoadToken()
@@ -111,7 +111,7 @@ export default {
     }
     setTimeout(() => {
       this.getChartData()
-    }, 800)
+    }, 1000)
   },
   methods: {
     ...mapActions('auth', ['ActionGetTickets', 'ActionLoadInvestments', 'ActionGetLocalUserId', 'ActionInserTinvestment', 'ActionInvestmentsDelete', 'ActionLoadToken']),
@@ -168,7 +168,7 @@ export default {
       }
     },
     async getChartData () {
-      const variada = ['Renda Variavel', 0]
+      const variada = ['Renda Variável', 0]
       const fixa = ['Renda Fixa', 0]
       this.investments.forEach(element => {
         if (element.type === 'variavel') {

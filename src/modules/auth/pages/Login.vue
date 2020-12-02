@@ -5,12 +5,12 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
               <div class="form-group">
-                <input type="email" v-model="form.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="email" v-model="form.email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
               </div>
-              <input type="password" v-model="form.password" id="inputPassword" class="form-control" placeholder="Password" required>
-              <input type="password" v-if = "isCreate" v-model="form.passwordConfirmation" id="inputPassword" class="form-control" placeholder="Password Confirmation">
-              <button v-if="!isCreate" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit">Sign in</button>
-              <button @click="signup" class="btn btn-lg btn-danger  btn-signin">Sign Up</button>
+              <input type="password" v-model="form.password" id="inputPassword" class="form-control" placeholder="Senha" required>
+              <input type="password" v-if = "isCreate" v-model="form.passwordConfirmation" id="inputPassword" class="form-control" placeholder="Confirmar senha">
+              <button v-if="!isCreate" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" @click="submit">Login</button>
+              <button @click="signup" class="btn btn-lg btn-danger  btn-signin">Cadastrar</button>
             </form><!-- /form -->
         </div>
     </div>
