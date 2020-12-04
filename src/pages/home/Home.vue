@@ -180,7 +180,7 @@ export default {
       this.dataToChart = [variada, fixa]
     },
     validForm () {
-      if (this.selected === 'Renda fixa') {
+      if (this.selected === 'Renda Fixa') {
         return (this.form.value && this.form.data)
       } else {
         return (this.form.value && this.form.data && this.form.ticket)
