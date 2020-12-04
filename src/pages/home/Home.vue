@@ -23,7 +23,7 @@
                      </option>
                   </select>
               </div>
-              <div class="col col-lg-3"  v-show="selected !== 'Renda fixa'">
+              <div class="col col-lg-3"  v-show="selected !== 'Renda Fixa'">
                   <label for="cars">Ativo:*</label><br>
                   <select class="form-control fixa-select" v-model="form.ticket"  >
                      <option v-for="option in form.tickets" v-bind:value="option" v-bind:key="option.name">
@@ -128,7 +128,7 @@ export default {
         return false
       }
       let request = { }
-      if (this.selected === 'Renda fixa') {
+      if (this.selected === 'Renda Fixa') {
         request = {
           type: 'fixa',
           userId: await this.ActionGetLocalUserId(),
