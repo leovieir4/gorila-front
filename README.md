@@ -40,4 +40,4 @@ $ npm run start //rodar a api em modo de produção
 
 A gorila-front está hospedada no heroku versão free dyno, por isso quando não utilizada o heroku a desliga até a proxima requisição, por isso pode demorar um pouco para a primeira resposta.
 
-Link da api: https://gorila-front.herokuapp.com/
+Link da aplicação: https://gorila-front.herokuapp.com/
